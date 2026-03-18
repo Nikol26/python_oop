@@ -16,3 +16,5 @@ src/lab07
 # scripts
 _scripts/__pycache__
 
+__pycache__/
+*.pyc
