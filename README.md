@@ -17,6 +17,9 @@
 ~ Запрещает недопустимые действия (например, нельзя повысить отчисленного студента или повысить курс выше максимального)
 
 ~ Предоставляет удобный интерфейс через свойства (`@property`)
+ ## Зарисовки в draw.io
+<img width="375" height="212" alt="image" src="https://github.com/user-attachments/assets/40a25117-690b-4028-8d72-94747cb30855" />
+<img width="606" height="302" alt="image" src="https://github.com/user-attachments/assets/a58c9e40-81d3-40a7-be2a-f7c919d6b06e" />
 
 ## Реализованный класс
 
