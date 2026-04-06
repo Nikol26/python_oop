@@ -51,7 +51,8 @@ class Student:
         if self._course >= self.MAX_COURSE:
             raise ValueError(f"Cannot promote student beyond course {self.MAX_COURSE}.")
         self._course += 1
-
+        return f"STUDENT PERESHEL NA {self._course} kurs"
+    
     def expel(self):
         if self._status == self.EXPELLED_STATUS:
             raise ValueError("Student is already expelled.")
@@ -79,4 +80,5 @@ class Student:
         if not isinstance(other, Student):
             return NotImplemented
         return self._student_id == other._student_id
-    
+
+
