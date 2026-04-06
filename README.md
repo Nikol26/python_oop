@@ -1,3 +1,12 @@
+## 📚 Лабораторные работы
+
+### 🔹 ЛР-1: Класс и инкапсуляция  
+[Перейти к работе](https://github.com/Nikol26/python_oop/tree/main/python_labs/src/lab01)
+
+---
+
+### 🔹 ЛР-2: Коллекция объектов  
+[Перейти к работе](https://github.com/Nikol26/python_oop/tree/main/python_labs/src/lab02)
 # Лабораторная работа -1 — Класс и инкапсуляция (Python 3.x) Образование 1 вариант 🎓📚
 
 <img width="320" height="158" alt="image" src="https://github.com/user-attachments/assets/4e378fe8-aee9-45f5-af57-26e7c5182a3c" />
