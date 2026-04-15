@@ -97,6 +97,9 @@
 
 Создание объектов разных типов студентов.
 
+<img width="1481" height="195" alt="image" src="https://github.com/user-attachments/assets/363892bc-7b46-4d93-bc41-19fe39c75ce0" />
+
+
 - использование super()  
 - корректная инициализация объектов  
 - вывод через __str__()  
@@ -105,6 +108,9 @@
 
 ### Сценарий 2 — Методы
 
+<img width="1478" height="214" alt="image" src="https://github.com/user-attachments/assets/a031cdc3-4321-40a0-acbd-efce31126890" />
+
+
 - базовый метод promote()  
 - методы дочерних классов  
 - демонстрация различного поведения  
@@ -112,6 +118,10 @@
 ---
 
 ### Сценарий 3 — Работа с коллекцией
+
+<img width="1538" height="223" alt="image" src="https://github.com/user-attachments/assets/8a44213a-dff3-4c65-8b61-aead1d22e64c" />
+
+
 
 Используется StudentCollection из ЛР-2:
 
@@ -123,11 +133,15 @@
 
 ### Сценарий 4 — Полиморфизм
 
+<img width="1291" height="183" alt="image" src="https://github.com/user-attachments/assets/e83dabc1-9267-4972-acdc-5f44a7f44c7d" />
+
+
+
 ```python
 obj.display()
 ```
 
-
+---
 ### Каждый класс реализует метод по-своему:
 
 - BachelorStudent → направление и форма обучения  
@@ -140,12 +154,19 @@ obj.display()
 
 ### Сценарий 5 — Проверка типов
 
+<img width="1280" height="193" alt="image" src="https://github.com/user-attachments/assets/508f98d4-ee5c-4a45-b5d5-5355d24b412e" />
+
+
+
 - использование isinstance()  
 - определение типа объекта  
 
 ---
 
 ### Сценарий 6 — Фильтрация
+
+<img width="1563" height="311" alt="image" src="https://github.com/user-attachments/assets/7df45f70-d349-44bc-bebf-4874fb937ee9" />
+
 
 - get_only_bachelors()  
 - get_only_masters()  
