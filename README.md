@@ -19,4 +19,6 @@
 [Перейти к работе](python_labs/src/lab03/README.md)
 
 ---
-- [Лабораторная работа №4 — Интерфейсы и абстрактные классы](python_labs/src/lab04/README.md)
+##  ЛP-4 — Интерфейсы и абстрактные классы]
+[Перейти к работе](python_labs/src/lab04/README.md)
+
