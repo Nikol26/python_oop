@@ -89,6 +89,7 @@
 ```python
 def filter_by(self, predicate):
     return StrategyStudentCollection(list(filter(predicate, self._items)))@'
+```
 Метод принимает функцию-предикат и возвращает новую коллекцию с подходящими объектами.
 
 ---
