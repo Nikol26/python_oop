@@ -194,17 +194,20 @@ collection.apply(strategy)
 
 Коллекция содержит методы:
 
-add(item) — добавляет объект
-get_all() — возвращает все объекты
-sort_by(key_func) — сортирует через функцию
-filter_by(predicate) — фильтрует через функцию
-apply(func) — применяет функцию ко всем элементам
+- add(item) — добавляет объект
+- get_all() — возвращает все объекты
+- sort_by(key_func) — сортирует через функцию
+- filter_by(predicate) — фильтрует через функцию
+- apply(func) — применяет функцию ко всем элементам
 
 ---
 
 ## 4. Демонстрация работы
 
 Сценарий 1 — сортировка и фильтрация
+
+<img width="911" height="1091" alt="image" src="https://github.com/user-attachments/assets/414a7cec-3453-4463-ba4a-909dd3a837b6" />
+
 
 Показана сортировка:
 
@@ -221,6 +224,8 @@ apply(func) — применяет функцию ко всем элемента
 
 Сценарий 2 — map, lambda и фабрики
 
+<img width="1264" height="1083" alt="image" src="https://github.com/user-attachments/assets/809a812e-ae8d-4146-90f4-6ae4526483ca" />
+
 Показано:
 
 - map() для преобразования
@@ -231,17 +236,23 @@ apply(func) — применяет функцию ко всем элемента
 
 Сценарий 3 — цепочка операций
 
+<img width="928" height="280" alt="image" src="https://github.com/user-attachments/assets/af7f34a3-9c72-4a2e-a715-a39e4690e500" />
+
 filter → sort → apply
 
 ---
 
 Сценарий 4 — замена стратегии
 
+<img width="912" height="697" alt="image" src="https://github.com/user-attachments/assets/f1c39bde-7c55-48cd-8e65-e64f577de671" />
+
 Передаём разные функции без изменения коллекции
 
 ---
 
 Сценарий 5 — callable-объекты
+
+<img width="913" height="687" alt="image" src="https://github.com/user-attachments/assets/75b90400-7b0e-4974-bc9a-a3a328461a42" />
 
 Используются классы как функции
 
