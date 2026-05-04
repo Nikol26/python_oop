@@ -107,10 +107,11 @@ def filter_by(self, predicate):
 - в список имён
 
 Пример:
-
+```python
 strings = list(map(student_to_string, collection))
 dictionaries = list(map(student_to_dict, collection))
 names = list(map(lambda student: student_to_dict(student)["name"], collection))
+```
 
 ---
 
@@ -121,10 +122,11 @@ lambda — это короткая функция без имени.
 Используется, когда функция нужна один раз.
 
 Пример:
+```python
 
 names = list(map(lambda student: student_to_dict(student)["name"], collection))
 collection.sort_by(lambda student: student_to_dict(student)["course"])
-
+```
 ---
 
 ### 2.6. Фабрики функций
@@ -132,16 +134,19 @@ collection.sort_by(lambda student: student_to_dict(student)["course"])
 Фабрика функций — это функция, которая возвращает другую функцию.
 
 Пример:
+```python
 
 def make_gpa_filter(min_gpa):
     def filter_fn(student):
         return student._gpa >= min_gpa
     return filter_fn
+```
 
 Использование:
-
+```python
 gpa_filter = make_gpa_filter(4.6)
 filtered = collection.filter_by(gpa_filter)
+```
 
 ---
 
@@ -152,10 +157,11 @@ filtered = collection.filter_by(gpa_filter)
 В работе стратегии передаются как функции.
 
 Пример:
-
+```python
 collection.sort_by(by_name)
 collection.sort_by(by_gpa)
 collection.sort_by(lambda student: student._course)
+```
 
 Коллекция не знает, какая стратегия используется.
 
@@ -168,19 +174,20 @@ Callable-объект — это объект, который можно выз�
 Для этого используется метод __call__().
 
 Пример:
-
+```python
 class GpaBonusStrategy:
     def __init__(self, bonus):
         self._bonus = bonus
 
     def __call__(self, student):
         return student._gpa + self._bonus
-
+```
 Использование:
+```python
 
 strategy = GpaBonusStrategy(0.2)
 collection.apply(strategy)
-
+```
 ---
 
 ## 3. Коллекция StrategyStudentCollection
