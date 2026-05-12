@@ -27,3 +27,8 @@
 
 [Перейти к работе](python_labs/src/lab05/README.md)
 
+---
+
+## ЛР-6: Generics и typing
+
+[Перейти к работе](python_labs/src/lab06/README.md)
