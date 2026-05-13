@@ -1,4 +1,4 @@
-﻿from future import annotations
+﻿from __future__ import annotations
 
 import sys
 import importlib.util
@@ -124,7 +124,9 @@ def scenario_2_find_filter_map(collection: TypedCollection[Displayable]) -> None
     )
     print("\nfilter(): GPA >= 4.7:")
     for student in filtered:
-        print(student.display())names: list[str] = collection.map(lambda student: str(get_field(student, "name")))
+        print(student.display())
+
+    names: list[str] = collection.map(lambda student: str(get_field(student, "name")))
     print("\nmap(): результат list[str]:")
     print(names)
 
@@ -178,5 +180,5 @@ def main() -> None:
     scenario_4_scorable_protocol()
 
 
-if name == "__main__":
+if __name__ == "__main__":
     main()
