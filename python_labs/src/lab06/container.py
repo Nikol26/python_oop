@@ -1,4 +1,4 @@
-﻿from future import annotations
+﻿from __future__ import annotations
 
 from typing import Callable, Generic, Iterator, Optional, Protocol, TypeVar, runtime_checkable
 
