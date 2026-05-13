@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+﻿from future import annotations
 
 import sys
 import importlib.util
@@ -22,13 +22,10 @@ PhDStudent = lab03_models.PhDStudent
 
 
 def get_field(obj: object, name: str) -> object:
-    """Получить значение поля объекта."""
     return getattr(obj, f"_{name}", getattr(obj, name, None))
 
 
 class TypedBachelorStudent(BachelorStudent):
-    """Бакалавр с методами display() и score() для Protocol."""
-
     def display(self) -> str:
         return (
             f"Бакалавр: {get_field(self, 'name')} | "
@@ -43,8 +40,6 @@ class TypedBachelorStudent(BachelorStudent):
 
 
 class TypedMasterStudent(MasterStudent):
-    """Магистр с методами display() и score() для Protocol."""
-
     def display(self) -> str:
         return (
             f"Магистр: {get_field(self, 'name')} | "
@@ -59,8 +54,6 @@ class TypedMasterStudent(MasterStudent):
 
 
 class TypedPhDStudent(PhDStudent):
-    """Аспирант с методами display() и score() для Protocol."""
-
     def display(self) -> str:
         return (
             f"Аспирант: {get_field(self, 'name')} | "
@@ -91,91 +84,89 @@ def create_students() -> list[Displayable]:
 
 
 def scenario_1_typed_collection() -> TypedCollection[Displayable]:
-    print_header("СЦЕНАРИЙ 1: ТИПИЗИРОВАННАЯ КОЛЛЕКЦИЯ TypedCollection[Displayable]")
+    print_header("СЦЕНАРИЙ 1: TypedCollection[Displayable] И ВАЛИДАЦИЯ ТИПОВ")
 
     collection: TypedCollection[Displayable] = TypedCollection(Displayable)
 
     for student in create_students():
         collection.add(student)
 
-    print("Все объекты в коллекции:")
+    print("Все элементы коллекции:")
     for student in collection.get_all():
         print(student.display())
 
-    print("\nПроверка валидации типа:")
+    print("\nПроверка валидации типов:")
     try:
-        collection.add("Это не студент")
+        collection.add("Обычная строка")
     except TypeError as error:
-        print(f"Ошибка добавления: {error}")
+        print(f"Ошибка: {error}")
 
     return collection
 
 
 def scenario_2_find_filter_map(collection: TypedCollection[Displayable]) -> None:
-    print_header("СЦЕНАРИЙ 2: find(), filter(), map() И ИЗМЕНЕНИЕ ТИПА РЕЗУЛЬТАТА")
+    print_header("СЦЕНАРИЙ 2: find(), filter(), map()")
 
     found: Displayable | None = collection.find(
         lambda student: str(get_field(student, "name")) == "Иван"
     )
-    print("find(): найденный элемент:")
-    print(found.display() if found is not None else "Ничего не найдено")
+    print("find(): найденный студент:")
+    print(found.display() if found is not None else "None")
 
     not_found: Displayable | None = collection.find(
         lambda student: str(get_field(student, "name")) == "Никита"
     )
-    print("\nfind(): поиск несуществующего элемента:")
+    print("\nfind(): несуществующий студент:")
     print(not_found.display() if not_found is not None else "None")
 
     filtered: list[Displayable] = collection.filter(
         lambda student: float(get_field(student, "gpa")) >= 4.7
     )
-    print("\nfilter(): студенты с GPA >= 4.7:")
+    print("\nfilter(): GPA >= 4.7:")
     for student in filtered:
-        print(student.display())
-
-    names: list[str] = collection.map(lambda student: str(get_field(student, "name")))
-    print("\nmap(): результат list[str] — имена студентов:")
+        print(student.display())names: list[str] = collection.map(lambda student: str(get_field(student, "name")))
+    print("\nmap(): результат list[str]:")
     print(names)
 
     gpa_values: list[float] = collection.map(lambda student: float(get_field(student, "gpa")))
-    print("\nmap(): результат list[float] — GPA студентов:")
+    print("\nmap(): результат list[float]:")
     print(gpa_values)
 
 
-def scenario_3_protocol_displayable() -> None:
+def scenario_3_displayable_protocol() -> None:
     print_header("СЦЕНАРИЙ 3: Protocol Displayable БЕЗ ЯВНОГО НАСЛЕДОВАНИЯ")
 
-    display_collection: TypedCollection[Displayable] = TypedCollection(Displayable)
+    collection: TypedCollection[Displayable] = TypedCollection(Displayable)
 
-    display_collection.add(TypedBachelorStudent("Анна", "B-101", 2, 4.7, "Материаловедение", "очная"))
-    display_collection.add(TypedMasterStudent("Иван", "M-201", 1, 4.8, "Инженерные системы", "Наноматериалы"))
-    display_collection.add(TypedPhDStudent("Сергей", "P-301", 3, 4.9, "Новые сплавы", "Проф. Петров"))
+    collection.add(TypedBachelorStudent("Анна", "B-101", 2, 4.7, "Материаловедение", "очная"))
+    collection.add(TypedMasterStudent("Иван", "M-201", 1, 4.8, "Инженерные системы", "Наноматериалы"))
+    collection.add(TypedPhDStudent("Сергей", "P-301", 3, 4.9, "Новые сплавы", "Проф. Петров"))
 
-    print("Объекты не наследуются от Displayable явно, но имеют метод display():")
-    for item in display_collection:
+    print("Объекты подходят под Displayable, потому что имеют метод display():")
+    for item in collection:
         print(item.display())
         print(f"isinstance(item, Displayable): {isinstance(item, Displayable)}")
 
 
-def scenario_4_protocol_scorable() -> None:
-    print_header("СЦЕНАРИЙ 4: Protocol Scorable И СОРТИРОВКА ПО score()")
+def scenario_4_scorable_protocol() -> None:
+    print_header("СЦЕНАРИЙ 4: Protocol Scorable И TypedCollection[Scorable]")
 
-    score_collection: TypedCollection[Scorable] = TypedCollection(Scorable)
+    collection: TypedCollection[Scorable] = TypedCollection(Scorable)
 
-    score_collection.add(TypedBachelorStudent("Анна", "B-101", 2, 4.7, "Материаловедение", "очная"))
-    score_collection.add(TypedMasterStudent("Иван", "M-201", 1, 4.8, "Инженерные системы", "Наноматериалы"))
-    score_collection.add(TypedPhDStudent("Сергей", "P-301", 3, 4.9, "Новые сплавы", "Проф. Петров"))
+    collection.add(TypedBachelorStudent("Анна", "B-101", 2, 4.7, "Материаловедение", "очная"))
+    collection.add(TypedMasterStudent("Иван", "M-201", 1, 4.8, "Инженерные системы", "Наноматериалы"))
+    collection.add(TypedPhDStudent("Сергей", "P-301", 3, 4.9, "Новые сплавы", "Проф. Петров"))
 
-    print("Оценки объектов через score():")
-    for item in score_collection:
+    print("Объекты подходят под Scorable, потому что имеют метод score():")
+    for item in collection:
         print(f"{item.display()} | score = {item.score()}")
 
-    sorted_collection: TypedCollection[Scorable] = score_collection.sort_by(
+    sorted_collection: TypedCollection[Scorable] = collection.sort_by(
         lambda item: item.score(),
         reverse=True
     )
 
-    print("\nСортировка TypedCollection[Scorable] по score():")
+    print("\nСортировка по score():")
     for item in sorted_collection:
         print(f"{item.display()} | score = {item.score()}")
 
@@ -183,9 +174,9 @@ def scenario_4_protocol_scorable() -> None:
 def main() -> None:
     collection = scenario_1_typed_collection()
     scenario_2_find_filter_map(collection)
-    scenario_3_protocol_displayable()
-    scenario_4_protocol_scorable()
+    scenario_3_displayable_protocol()
+    scenario_4_scorable_protocol()
 
 
-if __name__ == "__main__":
+if name == "__main__":
     main()
