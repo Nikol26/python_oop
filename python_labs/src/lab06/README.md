@@ -35,9 +35,9 @@ TypedCollection[T]
 TypedCollection — это типизированная коллекция, которая может хранить объекты определённого типа.
 
 Например:
-
+```python
 collection: TypedCollection[Displayable]
-
+```
 означает, что коллекция предназначена для объектов, которые соответствуют протоколу Displayable.
 
 2.1. TypeVar T
@@ -49,9 +49,9 @@ T = TypeVar("T")
 Она используется для обозначения типа элементов внутри коллекции.
 
 Пример:
-
+```python
 class TypedCollection(Generic[T]):
-
+```
 Это значит, что TypedCollection является обобщённым классом и может работать с разными типами объектов.
 2.2. TypeVar R
 
@@ -189,15 +189,17 @@ score()
 
 Сценарий 1 — Типизированная коллекция TypedCollection[Displayable]
 
+<img width="934" height="343" alt="image" src="https://github.com/user-attachments/assets/9f28a921-2f25-4960-9dd3-272800c40a4b" />
+
 Создаётся коллекция:
 ```python
 collection: TypedCollection[Displayable]
 ```
 В неё добавляются объекты разных типов:
 
-TypedBachelorStudent;
-TypedMasterStudent;
-TypedPhDStudent.
+- TypedBachelorStudent;
+- TypedMasterStudent;
+- TypedPhDStudent.
 
 Демонстрируется:
 
@@ -208,27 +210,33 @@ TypedPhDStudent.
 
 Сценарий 2 — Методы find(), filter() и map()
 
+<img width="921" height="557" alt="image" src="https://github.com/user-attachments/assets/2801a8f8-4b68-4e78-98d8-b5d9959c52f8" />
+
+
 В данном сценарии демонстрируется работа методов:
 
-find()
-filter()
-map()
+- find()
+- filter()
+- map()
 
 Метод find() вызывается два раза:
 
-первый раз объект найден;
-второй раз объект не найден и возвращается None.
+- первый раз объект найден;
+- второй раз объект не найден и возвращается None.
 
 Метод filter() выбирает студентов с GPA выше или равным 4.7.
 
 Метод map() вызывается два раза:
 
-получение списка имён list[str];
-получение списка GPA list[float].
+- получение списка имён list[str];
+- получение списка GPA list[float].
 
 Это показывает, что map() может менять тип результата.
 
 Сценарий 3 — Protocol Displayable
+
+<img width="932" height="293" alt="image" src="https://github.com/user-attachments/assets/f87aaa88-7266-4c31-a581-ab6550ff83f3" />
+
 
 Создаётся коллекция:
 
@@ -243,15 +251,19 @@ display()
 Поэтому они подходят под протокол.
 
 Также демонстрируется проверка:
-
+```python
 isinstance(item, Displayable)
+```
 
 Сценарий 4 — Protocol Scorable
 
+<img width="1085" height="319" alt="image" src="https://github.com/user-attachments/assets/9b231ef5-a17b-41db-aef2-5a7a3f8b612e" />
+
+
 Создаётся коллекция:
-
+```python
 score_collection: TypedCollection[Scorable]
-
+```
 В неё добавляются объекты студентов, которые имеют метод:
 
 score()
@@ -260,9 +272,9 @@ score()
 
 Демонстрируется:
 
-вызов score() для каждого объекта;
-сортировка коллекции по score();
-работа одного и того же TypedCollection с разными ограничениями.
+- вызов score() для каждого объекта;
+- сортировка коллекции по score();
+- работа одного и того же TypedCollection с разными ограничениями.
 
 4. Вывод
 
@@ -270,13 +282,13 @@ score()
 
 Были реализованы:
 
-generic-класс TypedCollection[T];
-переменная типа T;
-переменная типа R;
-методы find(), filter(), map();
-протоколы Displayable и Scorable;
-ограниченные TypeVar через bound;
-структурная типизация через Protocol.
+- generic-класс TypedCollection[T];
+- переменная типа T;
+- переменная типа R;
+- методы find(), filter(), map();
+- протоколы Displayable и Scorable;
+- ограниченные TypeVar через bound;
+- структурная типизация через Protocol.
 
 Лабораторная работа показала, что типизация помогает лучше понимать структуру программы, заранее видеть ожидаемые типы данных и безопаснее работать с коллекциями объектов.
 
