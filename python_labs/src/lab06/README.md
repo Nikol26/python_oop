@@ -120,19 +120,19 @@ S подходит только для объектов, у которых ес�
 
 В классе TypedCollection реализованы методы:
 
-add(item: T) -> None
+- add(item: T) -> None
 
 Добавляет объект в коллекцию.
 
-remove(item: T) -> None
+- remove(item: T) -> None
 
 Удаляет объект из коллекции.
 
-get_all() -> list[T]
+- get_all() -> list[T]
 
 Возвращает список всех объектов коллекции.
 
-find(predicate: Callable[[T], bool]) -> Optional[T]
+- find(predicate: Callable[[T], bool]) -> Optional[T]
 
 Ищет первый объект, подходящий под условие.
 
@@ -140,21 +140,21 @@ find(predicate: Callable[[T], bool]) -> Optional[T]
 
 Если объект не найден — возвращает None.
 
-filter(predicate: Callable[[T], bool]) -> list[T]
+- filter(predicate: Callable[[T], bool]) -> list[T]
 
 Возвращает список всех объектов, которые подходят под условие.
 
-map(transform: Callable[[T], R]) -> list[R]
+- map(transform: Callable[[T], R]) -> list[R]
 
 Применяет функцию к каждому объекту и возвращает список результатов.
 
 Тип результата может отличаться от типа объектов коллекции.
 
-sort_by(key_func: Callable[[T], object], reverse: bool = False) -> TypedCollection[T]
+- sort_by(key_func: Callable[[T], object], reverse: bool = False) -> TypedCollection[T]
 
 Сортирует коллекцию по переданной функции.
 
-apply(func: Callable[[T], R]) -> list[R]
+- apply(func: Callable[[T], R]) -> list[R]
 
 Применяет переданную функцию ко всем элементам коллекции.
 
