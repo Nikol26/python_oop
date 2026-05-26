@@ -32,3 +32,9 @@
 ## ЛР-6: Generics и typing
 
 [Перейти к работе](python_labs/src/lab06/README.md)
+---
+
+## ЛР-7: Консольное приложение
+
+[Перейти к работе](python_labs/src/lab07/README.md)
+---
