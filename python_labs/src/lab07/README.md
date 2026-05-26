@@ -178,6 +178,7 @@ python_labs/src/lab07/data/students.json
 docstring для функций и методов.
 
 Лабораторная работа показала, как собрать полноценное приложение из отдельных модулей.1
+## Дополнительное задание
 ## Запись демонстрации
 
-[![asciinema](https://asciinema.org/a/GoRQOxkoGRiHpMGi.svg)](https://asciinema.org/a/GoRQOxkoGRiHpMGi)
+[![asciinema](https://asciinema.org/a/FrQ7EHm01Oup9XI2.svg)](https://asciinema.org/a/FrQ7EHm01Oup9XI2)
