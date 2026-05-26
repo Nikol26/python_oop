@@ -97,6 +97,9 @@ python_labs/src/lab07/data/students.json
 
 ## Сценарий 1 — запуск и автозагрузка данных
 
+<img width="1069" height="923" alt="image" src="https://github.com/user-attachments/assets/14ea5b38-34c7-42fe-a3bf-f3b193ddd268" />
+
+
 При запуске приложение сообщает:
 
 Данные автоматически загружены.
@@ -104,6 +107,9 @@ python_labs/src/lab07/data/students.json
 После выбора пункта 2 выводится список студентов.
 
 ## Сценарий 2 — добавление студента
+
+<img width="710" height="508" alt="image" src="https://github.com/user-attachments/assets/7541e0be-e515-4b1c-b967-81055217b46d" />
+
 
 Через пункт меню 1 пользователь добавляет студента.
 
@@ -113,11 +119,16 @@ python_labs/src/lab07/data/students.json
 
 ## Сценарий 3 — поиск и фильтрация
 
+<img width="944" height="1032" alt="image" src="https://github.com/user-attachments/assets/49c7e11f-2fa1-4e27-a9fb-5f654cfd49cc" />
+
 Через пункт меню 3 выполняется поиск студента по ФИО.
 
 Через пункт меню 5 выполняется фильтрация по GPA.
 
 ## Сценарий 4 — сортировка
+
+<img width="876" height="638" alt="image" src="https://github.com/user-attachments/assets/f9343869-8da1-4d03-bcba-b632dd12de70" />
+
 
 Через пункт меню 6 пользователь выбирает стратегию сортировки:
 
@@ -127,6 +138,9 @@ python_labs/src/lab07/data/students.json
 
 ## Сценарий 5 — удаление с подтверждением
 
+<img width="670" height="465" alt="image" src="https://github.com/user-attachments/assets/f096e7bb-16cc-49d0-b983-6f5246ccbf41" />
+
+
 Через пункт меню 4 пользователь удаляет студента.
 
 Перед удалением программа спрашивает:
@@ -134,6 +148,9 @@ python_labs/src/lab07/data/students.json
 Удалить "ФИО студента"? (y/n):
 
 ## Сценарий 6 — обработка ошибок
+
+<img width="597" height="409" alt="image" src="https://github.com/user-attachments/assets/65434642-3d3c-48d4-b20e-32e487889b22" />
+
 
 В программе показана обработка ошибок:
 
