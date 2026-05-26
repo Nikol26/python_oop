@@ -180,4 +180,4 @@ docstring для функций и методов.
 Лабораторная работа показала, как собрать полноценное приложение из отдельных модулей.1
 ## Запись демонстрации
 
-[![asciinema](https://asciinema.org/a/ZPLNuFqSaxRglTax.svg)](https://asciinema.org/a/ZPLNuFqSaxRglTax)
+[![asciinema](https://asciinema.org/a/GoRQOxkoGRiHpMGi.svg)](https://asciinema.org/a/GoRQOxkoGRiHpMGi)
